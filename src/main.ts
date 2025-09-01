@@ -1,5 +1,5 @@
-import { AppExpress, AppRoutes } from "./presentation/index.ts";
-import { envsAdapter } from "./adapters/index.ts";
+import { AppExpress, AppRoutes } from "./presentation";
+import { envsAdapter } from "./adapters";
 
 (async () => {
   await main();

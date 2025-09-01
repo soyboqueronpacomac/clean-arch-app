@@ -1,3 +1,3 @@
-export * from './App.express.ts';
-export * from './api/api.routes.ts';
-export * from './app.routes.ts';
+export * from './App.express';
+export * from './api/api.routes';
+export * from './app.routes';

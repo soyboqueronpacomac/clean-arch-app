@@ -4,7 +4,7 @@
 
 ## Descripción
 
-Backend en **Node.js** implementado siguiendo los principios de **Clean Architecture**, enfocado en escalabilidad, mantenibilidad y APIs REST robustas.  
+Backend en **Bun.js** implementado siguiendo los principios de **Clean Architecture**, enfocado en escalabilidad, mantenibilidad y APIs REST robustas.  
 
 - **Capa de dominio:** Entidades, agregados y reglas de negocio puras.  
 - **Capa de aplicación:** Casos de uso, servicios y DTOs.  
@@ -25,6 +25,7 @@ Versión: `0.0.1-alpha.1`
 ## Tecnologías utilizadas
 
 - Node.js
+- Bun.js
 - TypeScript
 - Express
 - MongoDB + Mongoose
@@ -46,7 +47,7 @@ cd clean-arch-app
 2. Instalar dependencia
 
 ```bash
-npm install
+bun install
 ```
 
 3. Para desarrollo corre el comando

@@ -6,15 +6,16 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "dev": "nodemon",
+    "dev": "bun --watch run src/main.ts",
     "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/main.js"
+    "start": "bun src/main.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/soyboqueronpacomac/clean-arch-app.git"
   },
   "keywords": [
+    "bun",
     "node",
     "typescript",
     "clean-architecture",

@@ -1,12 +1,12 @@
-import express from "express";
-import type { Request, Response } from "express";
-import { todosData } from "../../data/index.ts";
+import { Request, Response } from "express";
+import { CustomReponse } from "../../domain/response/custom.response";
+import { todosData } from "../../data";
 
-export class TodosController   {
-  // DI
-  constructor() {}
 
-  public getTodos(_req: Request, res: Response) {
-    res.status(200).json({ data: todosData})
+
+export class TodosController {
+  public  getTodos(_req: Request, res: Response) {
+    const response = CustomReponse.ok(todosData, "Todos fetched successfully");
+    res.status(response.statusCode).json(response);
   }
 }

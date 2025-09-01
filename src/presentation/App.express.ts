@@ -1,5 +1,5 @@
 import express, { Router } from 'express'
-import { todosData } from '../data/index.ts';
+
 interface OptionsServerExpress {
   port: number;
   routes: Router;
@@ -21,9 +21,7 @@ export class AppExpress {
     // routes
     this.app.use(this.routes);
 
-    this.app.get('/api/todos', (_req, res) => {
-      res.status(200).json(todosData)
-    })
+    
 
     this.app.listen(this.port, () => {
       console.log(`Server running on port ${this.port}`);

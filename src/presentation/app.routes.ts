@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { apiRoutes } from "./api/api.routes.ts";
+import { apiRoutes } from "./api/api.routes";
 
 export class AppRoutes {
   static get routes(): Router{
