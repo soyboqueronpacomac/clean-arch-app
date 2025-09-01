@@ -1,4 +1,4 @@
-import { AppExpress } from "./presentation/App.express.ts";
+import { AppExpress, AppRoutes } from "./presentation/index.ts";
 import { envsAdapter } from "./adapters/index.ts";
 
 (async () => {
@@ -6,6 +6,9 @@ import { envsAdapter } from "./adapters/index.ts";
 })()
 
 async function main() {
-  console.log(envsAdapter.PORT);
-  new AppExpress({ port: envsAdapter.PORT }).start();
+  
+  new AppExpress({
+     port: envsAdapter.PORT,
+     routes: AppRoutes.routes 
+   }).start();
 }

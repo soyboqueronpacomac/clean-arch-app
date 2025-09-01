@@ -1,21 +1,25 @@
-import express from 'express'
+import express, { Router } from 'express'
 import { todosData } from '../data/index.ts';
 interface OptionsServerExpress {
   port: number;
+  routes: Router;
   
 }
 export class AppExpress {
   private readonly app = express();
   private readonly port: number;
+  private readonly routes: Router;
   constructor(options: OptionsServerExpress) {
-    const { port } = options;
+    const { port, routes } = options;
     this.port = port;
+    this.routes = routes;
   }
 
   async start() {
     // middlewares
 
     // routes
+    this.app.use(this.routes);
 
     this.app.get('/api/todos', (_req, res) => {
       res.status(200).json(todosData)
