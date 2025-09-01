@@ -1,4 +1,5 @@
-import express, { Router } from 'express'
+import express, { json, Router, urlencoded } from 'express'
+import { CommonMiddlewares } from './middlewares/common.middleware';
 
 interface OptionsServerExpress {
   port: number;
@@ -17,6 +18,7 @@ export class AppExpress {
 
   async start() {
     // middlewares
+    CommonMiddlewares.apply(this.app);
 
     // routes
     this.app.use(this.routes);

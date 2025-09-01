@@ -8,6 +8,7 @@ export class TodosRoutes {
     // Definir las rutas relacionadas con "todos" aquí
     routes.get('/', todosController.getTodos);
     routes.get('/:id', todosController.getTodoById);
+    routes.post('/', todosController.createTodo);
     return routes;
   }
 }

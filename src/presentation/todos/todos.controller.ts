@@ -23,4 +23,20 @@ export class TodosController {
         error
       })
   }
+
+  public createTodo (req: Request, res: Response) {
+    const { text } = req.body
+    if (!text) {
+      const error = CustomError.badRequest('El texto es obligatorio');
+      res.status(error.statusCode).json({error});
+    }
+    const todo ={
+      id: todosData.length + 1,
+      text,
+      createdAt: new Date()
+    }
+    todosData.push(todo)
+    const response = CustomReponse.created(todo, 'TODO Creado correctamente')
+    res.status(response.statusCode).json(response)
+  }
 }
