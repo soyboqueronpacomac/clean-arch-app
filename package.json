@@ -1,0 +1,16 @@
+{
+  "name": "clean-arch-app",
+  "version": "0.0.1-alpha.1",
+  "description": "ackend Node.js estructurado con Clean Architecture, enfocado en escalabilidad, mantenibilidad y APIs REST robustas. Incluye capas de dominio, aplicación e infraestructura con repositorios, servicios y DTOs.",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "node",
+    "clean-architecture",
+    "backend"
+  ],
+  "author": "paco-dev",
+  "license": "MIT"
+}
