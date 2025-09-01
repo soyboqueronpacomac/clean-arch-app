@@ -39,5 +39,18 @@ Versión: `0.0.1-alpha.1`
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/soyboqueronpacomac/mi-proyecto.git
+git clone https://github.com/soyboqueronpacomac/clean-arch-app.git
 cd clean-arch-app
+```
+
+2. Instalar dependencia
+
+```bash
+npm install
+```
+
+3. Para desarrollo corre el comando
+
+```bash
+node --run dev
+```

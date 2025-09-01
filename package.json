@@ -4,13 +4,32 @@
   "description": "ackend Node.js estructurado con Clean Architecture, enfocado en escalabilidad, mantenibilidad y APIs REST robustas. Incluye capas de dominio, aplicación e infraestructura con repositorios, servicios y DTOs.",
   "main": "src/main.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "tsnd --respawn --clear src/app.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/app.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soyboqueronpacomac/clean-arch-app.git"
   },
   "keywords": [
     "node",
+    "typescript",
     "clean-architecture",
-    "backend"
+    "backend",
+    "express",
+    "rest-api",
+    "mongoose",
+    "cors"
   ],
   "author": "paco-dev",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "rimraf": "^6.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
 }
