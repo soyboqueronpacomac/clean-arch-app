@@ -7,6 +7,7 @@ export class TodosRoutes {
     const todosController = new TodosController();
     // Definir las rutas relacionadas con "todos" aquí
     routes.get('/', todosController.getTodos);
+    routes.get('/:id', todosController.getTodoById);
     return routes;
   }
 }
