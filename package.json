@@ -5,10 +5,9 @@
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
-    "test": "jest",
-    "dev": "bun --watch run src/main.ts",
-    "build": "rimraf ./dist && tsc",
-    "start": "bun src/main.ts"
+    "dev": "bun run --watch src/main.ts",
+    "start": "bun run dist/main.js",
+    "build": "bun build ./src/main.ts --outdir dist --target bun"
   },
   "repository": {
     "type": "git",
