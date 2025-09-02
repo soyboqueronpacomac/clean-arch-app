@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "bun run --watch src/main.ts",
     "start": "bun run dist/main.js",
-    "build": "bun build ./src/main.ts --outdir dist --target bun"
+    "build": "bun build ./src/main.ts --outdir dist --target bun",
+    "prisma:migrate:prod": "prisma migrate deploy"
   },
   "repository": {
     "type": "git",

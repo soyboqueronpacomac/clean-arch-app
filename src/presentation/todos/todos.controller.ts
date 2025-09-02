@@ -2,7 +2,7 @@ import e, { Request, Response } from "express";
 import { CustomReponse } from "../../domain/response/custom.response";
 import { CustomError } from "../../domain/errors/custom.error";
 import { prisma } from "../../data/postgres";
-import { CreateTodoDto } from "../../domain/dtos/todos/create-todo.dto";
+import { CreateTodoDto, UpdateTodoDto } from "../../domain/dtos/todos";
 
 
 
@@ -67,7 +67,12 @@ export class TodosController {
     try {
       const existingTodo = await this.findTodoById(req.params.id, res);
       if (!existingTodo) return;
-      const { text, completedAt } = req.body;
+      const [ error, updateTodoDto ] = UpdateTodoDto.create(req.body);
+      if (error) {
+        const errorUpdateTodoDto = CustomError.badRequest(error);
+        res.status(errorUpdateTodoDto.statusCode).json({errorUpdateTodoDto})
+      }
+      const { text, completedAt} = updateTodoDto!
       const todo = await prisma.todo.update({
         where: {id: existingTodo.id},
         data: {
